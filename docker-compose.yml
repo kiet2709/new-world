@@ -1,0 +1,92 @@
+# Mot file compose cho ca lo trinh. Dung `profiles` de cac chang sau
+# khong bat buoc phai bat het service ngay tu bai 1.
+#
+#   docker compose up -d              -> chi py + cpp (Chang 0-1)
+#   docker compose --profile ot up -d -> them mqtt + db + grafana (Chang 2)
+
+services:
+  py:
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    container_name: nw-py
+    working_dir: /work
+    volumes:
+      - .:/work
+      - py-cache:/root/.cache
+    environment:
+      - PYTHONPATH=/work
+    networks: [nw]
+    # Giu container song de `exec` vao lam viec (kieu may dev, khong phai job).
+    command: sleep infinity
+
+  cpp:
+    build:
+      context: .
+      dockerfile: docker/cpp/Dockerfile
+    container_name: nw-cpp
+    working_dir: /work
+    volumes:
+      - .:/work
+    networks: [nw]
+    command: sleep infinity
+
+  mqtt:
+    image: eclipse-mosquitto:2.0
+    container_name: nw-mqtt
+    profiles: [ot]
+    ports:
+      - "1883:1883"
+    volumes:
+      # Mount :ro co chu y. Entrypoint cua mosquitto se in mot dong canh bao
+      #   chown: /mosquitto/config/mosquitto.conf: Read-only file system
+      # Day la canh bao vo hai (broker van chay dung) - de nguyen de ban quen
+      # dan voi viec doc log va phan biet "canh bao" voi "loi that".
+      - ./docker/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mqtt-data:/mosquitto/data
+    networks: [nw]
+
+  db:
+    image: postgres:16-alpine
+    container_name: nw-db
+    profiles: [ot]
+    environment:
+      POSTGRES_USER: nw
+      POSTGRES_PASSWORD: nw
+      POSTGRES_DB: nw
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nw"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [nw]
+
+  grafana:
+    image: grafana/grafana-oss:11.4.0
+    container_name: nw-grafana
+    profiles: [ot]
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [nw]
+
+networks:
+  nw:
+    driver: bridge
+
+volumes:
+  py-cache:
+  mqtt-data:
+  db-data:
+  grafana-data:

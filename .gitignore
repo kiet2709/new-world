@@ -1,0 +1,43 @@
+# Build
+build/
+out/
+cmake-build*/
+*.o
+*.elf
+*.bin
+*.map
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# ESP-IDF
+sdkconfig.old
+managed_components/
+dependencies.lock
+
+# Data / model / media (nang, khong day len git)
+data/raw/
+data/captures/
+models/*.tflite
+models/*.onnx
+models/*.pt
+*.mp4
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.vscode/settings.json
+.idea/
+Thumbs.db
+desktop.ini
+
+# Du lieu sinh ra tu gen_data.py (bai 02)
+sensor_log.csv

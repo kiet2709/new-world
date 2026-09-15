@@ -1,0 +1,21 @@
+# --- Chang 0-1: nen ---
+pytest==8.3.4
+ruff==0.9.2
+black==24.10.0
+ipython==8.31.0 #sửa từ 8.31.0
+python-dotenv==1.0.1
+
+# --- Chang 1: doc cam bien tren Pi ---
+# (gpiozero/smbus2 chi hoat dong that khi chay tren Pi + passthrough /dev)
+smbus2==0.5.0
+gpiozero==2.0.1
+
+# --- Chang 2: cau noi OT ---
+paho-mqtt==2.1.0
+pymodbus==3.8.3
+pyserial==3.5
+
+# --- Chang 3: AI edge (bo comment khi toi Chang 3, build lai image) ---
+# numpy==2.2.1
+# opencv-python-headless==4.11.0.86
+# onnxruntime==1.20.1
