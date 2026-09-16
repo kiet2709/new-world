@@ -45,7 +45,7 @@ Yêu cầu duy nhất trên máy Windows: **Docker Desktop + Git**. Không cài 
 
 Từ Khối 2 trở đi: `.\dev.ps1 up ot`.
 
-## Tiến độ Chặng 1 — 56 bài, ~5 tháng
+## Tiến độ Chặng 1 — 64 bài, ~5.5–6 tháng
 
 Đánh dấu khi xong một khối. Xong = đạt tiêu chí "Xong khi" **và** đã commit.
 

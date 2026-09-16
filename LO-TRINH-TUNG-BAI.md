@@ -1225,7 +1225,7 @@ Viết script sinh báo cáo từ log — không đo bằng tay.
 
 **Bạn thành:** một kỹ sư phần mềm nhiều kinh nghiệm, **chạm được thiết bị, ghép được AI vào hệ thống thật, viết được ứng dụng có giao diện, và hiểu sản xuất.** Xét riêng từng trục thì không đứng đầu trục nào. Xét cả bốn trục cùng lúc thì rất ít người ở Việt Nam đứng được.
 
-**Và nhớ:** 56 bài cho bạn **năng lực**, không cho bạn **kinh nghiệm**. Thứ chúng không bù được — khách đổi yêu cầu, thiết bị đời 2009 không tài liệu, hệ thống cũ của người khác, sự cố 3 giờ sáng — chỉ có việc thật mới cho. Vì vậy **từ Khối 2 trở đi, bắt đầu nhận một job freelance nhỏ, dù rẻ**, chạy song song. Đừng để nó thành "việc làm sau khi học xong".
+**Và nhớ:** 64 bài cho bạn **năng lực**, không cho bạn **kinh nghiệm**. Thứ chúng không bù được — khách đổi yêu cầu, thiết bị đời 2009 không tài liệu, hệ thống cũ của người khác, sự cố 3 giờ sáng — chỉ có việc thật mới cho. Vì vậy **từ Khối 2 trở đi, bắt đầu nhận một job freelance nhỏ, dù rẻ**, chạy song song. Đừng để nó thành "việc làm sau khi học xong".
 
 ---
 
