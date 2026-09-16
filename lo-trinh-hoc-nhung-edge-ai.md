@@ -72,31 +72,35 @@ Mục tiêu: tự dựng môi trường, nạp code qua CLI/VS Code, tránh IDE 
 
 ---
 
-## 5. GIAI ĐOẠN 1 — Xây combo lõi (thiết bị hiện có: ESP32-S3 + Pi)
+## 5. CHẶNG 1 — Xây combo lõi (thiết bị hiện có: ESP32-S3 + Pi)
+
+> **Bản chi tiết: [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) — 7 khối, 56 bài, ~5 tháng.** Phần dưới đây chỉ là phác thảo gốc, giữ lại để nhớ ý định ban đầu.
+>
+> *Cách gọi tên: **CHẶNG** = giai đoạn lớn của sự nghiệp · **KHỐI** = nhóm bài trong một chặng · **BÀI** = đơn vị nhỏ nhất.*
 
 Nguyên tắc: nhúng và AI bổ trợ nhau; C++/Python lệch pha (Python dẫn trước, C++ theo sau); Docker/Git học qua dùng ngay từ đầu.
 
-### Chặng 1 — Nền (Python dẫn)
+### Khối nền (Python dẫn)
 - Dựng môi trường **Docker + Git flow** từ ngày đầu (học qua dùng).
 - Trên **Pi**: làm chủ Embedded Linux cơ bản — GPIO/I2C/SPI, chạy service, đọc cảm biến.
 - Ngôn ngữ: **Python dẫn** (sân gần nhất, ra kết quả nhanh, giữ động lực).
 
-### Chặng 2 — Cầu nối OT (Modbus/MQTT)
+### Khối cầu nối OT (Modbus/MQTT)
 - Cho **ESP32-S3** đóng vai thiết bị "kiểu máy" — nói **Modbus/MQTT**.
 - **Pi (Python)** đọc dữ liệu từ ESP32 qua giao thức đó.
 - Đây là lúc thật sự xây cây cầu IT↔OT — không cần PLC. Phần đắt giá nhất cho Làn 1.
 
-### Chặng 3 — AI lên edge
+### Khối AI lên edge
 - Chạy một model **vision** trên Pi (đọc camera) → xử lý → ra quyết định → gửi lệnh xuống ESP32 điều khiển thiết bị.
 - Luận văn tái sinh dưới dạng "production-looking".
 - Trọng tâm: *phán đoán* (chọn bài toán, tối ưu model — quantization, pruning cho thiết bị nhỏ), KHÔNG phải gõ Python.
 
-### Chặng 4 — C++ vào cuộc (C++ dẫn, theo sau)
+### Khối C++ vào cuộc (C++ dẫn, theo sau)
 - Lấy một phần đã làm bằng Python (đọc cảm biến, hoặc phần cần nhanh) và **viết lại bằng C++** trên ESP32-S3/Linux.
 - Học C++ *có ngữ cảnh*: đã hiểu bài toán, giờ học ngôn ngữ để làm tốt/nhanh hơn.
-- Chạm gần bare-metal → cầu tự nhiên để cuối chặng này (hoặc đầu GĐ2) **mua STM32** lấp lỗ hổng bare-metal.
+- Chạm gần bare-metal → cầu tự nhiên để cuối khối này (hoặc đầu Chặng 2) **mua STM32** lấp lỗ hổng bare-metal.
 
-### Đầu ra Giai đoạn 1 (artifact quan trọng nhất)
+### Đầu ra Chặng 1 (artifact quan trọng nhất)
 **Một hệ thống hoàn chỉnh:** camera → Pi (AI) → Modbus/MQTT → ESP32 → thiết bị. Đóng gói Docker, lịch sử Git sạch, có log + số liệu (độ chính xác, độ trễ, FPS, điện năng). Chạy liên tục nhiều ngày, tự phục hồi khi mất điện/mạng, xử lý input xấu thật. Public GitHub + README tử tế + video demo.
 
 > Một artifact chứng minh trọn combo hiếm. Đáng giá hơn mười chứng chỉ, và xóa đúng nghi ngờ "chỉ là lý thuyết".
@@ -129,21 +133,48 @@ Sự thật: dự án cá nhân **không tự đẻ ra** các case khó nhất c
 
 ---
 
-## 7. GIAI ĐOẠN 2 — Chỉ mở khi có JD cụ thể đòi
+## 7. CHẶNG 2 — Đừng đụng bây giờ, nhưng đã có bản đồ
 
-**Đừng đụng bây giờ. Đừng biến thành mớ "học cho đủ bộ".** Rất có thể chỉ cần *một* trong ba, hoặc không cần cái nào.
+> **Sửa ngày 2026-09-16.** Điều khoản cũ là *"chỉ mở khi có JD cụ thể đòi"*. Đã đổi: bạn quan sát rằng **JD ở VN rời rạc, mỗi nơi đòi một ít**, nên chờ JD là chờ một tín hiệu không bao giờ rõ. Quyết định: **phủ đầu có chọn lọc**.
+>
+> Nhưng chỉnh lại một nửa: *"JD rời rạc"* là lý do để **CHỌN LỌC**, không phải để phủ hết. Phủ hết chính là cái bẫy "học cho đủ bộ". Phủ đầu những thứ **lặp lại ở gần như mọi JD**, bỏ phần đuôi tản mát.
+>
+> **Bản đồ đầy đủ: [CHANG-2-BAN-DO.md](CHANG-2-BAN-DO.md)** — 7 khối A–G, có thứ tự ưu tiên, lý do, chi phí. Nó là **bản đồ, chưa phải danh sách bài**: khi tới nơi chọn 2–3 khối, không làm hết. Cả gói ≈ 8–9 tháng.
+>
+> **Vẫn giữ nguyên tinh thần cũ:** mở file đó khi **sắp xong Chặng 1**, không phải trước đó. Bạn-lúc-đó — đã phỏng vấn vài chỗ, có thể đã nhận job freelance — chọn giỏi hơn bạn-lúc-này.
 
-- **STM32 (nếu chưa làm cuối GĐ1):** lấp lỗ hổng bare-metal. Mua khi đã chắc tay và biết cần nó cho gì. Học tới mức *hiểu và điều khiển được thiết bị*, đừng đuổi độ sâu vô tận.
-- **C#:** CHỈ học nếu JD SCADA/HMI/MES trên .NET đòi. **Không** học để đổi nền web (vẫn cùng vùng nổ). Học nhanh từ nền OOP sẵn có.
-- **Cloud (AWS IoT):** đủ để deploy/kết nối edge lên cloud. Không lao vào "sở thू" big data.
-- **PLC:** **khoan mua.** Dùng ESP32 sẵn có + Modbus simulator để luyện cầu nối. Chỉ mua **một con rẻ nhất** nếu JD đòi "biết PLC/HMI là lợi thế", và chỉ để biết-đọc-hiểu — không để thành dân automation (lệch tạng + dính việc điện/hiện trường).
+Thứ tự đề xuất: **C (gỡ lỗi phần cứng) → F (machine learning từ gốc) → A (STM32 bare-metal) → B (Embedded Linux thật) → E (cloud) → D (phía OT thật)**, cộng **G** là ba nhánh rẽ theo ngành.
+
+- **STM32 (khối A):** lấp lỗ hổng bare-metal. Học tới mức *hiểu và điều khiển được thiết bị*, đừng đuổi độ sâu vô tận. **Khi mua, chọn board có FDCAN** (họ G4, ví dụ Nucleo-G474RE ~$20–25) — đừng mua F7 Discovery (đắt gấp 3–4 lần, chỉ có bxCAN cổ điển, chân bị LCD/SDRAM chiếm, M7 có cache gây thêm hố DMA).
+- **C#:** xem mục dưới — điều khoản này đã đổi.
+- **Cloud (khối E):** **E0 cloud nền tảng trước, E1 AWS IoT sau.** Lao thẳng vào AWS IoT khi chưa hiểu cloud vận hành thế nào thì thành gõ theo tutorial rồi quên sạch.
+- **PLC (khối D):** **khoan mua.** Dùng ESP32 sẵn có + Modbus simulator để luyện cầu nối. Nếu học thì học **đọc hiểu ladder + một sản phẩm SCADA** — chọn **Ignition** (bản dùng thử đầy đủ chức năng) thay vì WinCC (license đắt). Chỉ để biết-đọc-hiểu — không để thành dân automation (lệch tạng + dính việc điện/hiện trường).
 
 ---
 
 ## 8. Đã LOẠI / KHÔNG làm
 
 - **Java** — no-hope ở VN, đường Nhật cần tiếng Nhật + xa hướng nhúng. Bỏ hẳn.
-- **Đổi PHP → C# lúc này** — tàn dư tư duy cũ "mình là web dev chọn framework". Đã bước ra khỏi nó rồi.
+- **Đổi PHP → C# để làm WEB** — tàn dư tư duy cũ "mình là web dev chọn framework". Đã bước ra khỏi nó rồi. **Điều khoản này vẫn đúng và vẫn giữ.**
+
+> ### Sửa ngày 2026-09-16 — tách bạch hai loại C#
+>
+> Điều khoản trên từng bị hiểu là "loại C# nói chung". Sau khi **dò thị trường thật**, phải tách đôi:
+>
+> | | Quyết định |
+> |---|---|
+> | **C# để làm web / thành .NET web dev** | ❌ **Vẫn LOẠI.** Đúng là đổi ghế trong cùng vùng nổ |
+> | **C# để viết ứng dụng điều khiển thiết bị có UI** | ✅ **NHẬN.** Vào Chặng 1, Khối 5 (bài 46–50) |
+>
+> **Bằng chứng thị trường (dò 2026-09-16):**
+> - **Nhật:** JD 制御ソフト開発 cho **半導体製造装置** (thiết bị sản xuất bán dẫn) và **電子部品検査装置** (thiết bị kiểm tra linh kiện) ghi rõ **GUI + điều khiển robot/băng tải, dùng C++ và C#**. Mảng **検査装置 + C# + OpenCV** đang được công ty offshore Việt Nam nhận từ Nhật — gần như đúng hồ sơ đang xây.
+> - **Việt Nam:** JD SCADA/HMI ghi thẳng *"ưu tiên có kinh nghiệm SCADA WinCC, intouch hoặc ATSCADA, **C#, asp.net**, database"*, lương 15–35tr.
+>
+> **Khung chặt:** C# nền tảng · WinForms/WPF · Blazor (đúng **một** màn hình giám sát) · OpenCvSharp. **Không** đi sâu ASP.NET như một hướng nghề, không Entity Framework, không kiến trúc doanh nghiệp.
+>
+> **Và không học Qt** — nó trùng chỗ với C# ở đúng hai thị trường này, giá gấp ba, và so sánh WPF/Qt chỉ ra kiến thức framework chứ không phải bản chất ngôn ngữ. **Điều kiện lật lại:** nếu rẽ sang HMI **y tế hoặc ô tô** — ở đó Qt trên Linux nhúng thống trị thật.
+>
+> **MFC/Win32 cũng không học** — đó là thị trường **bảo trì** phần mềm thiết bị cũ (nhiều ở Nhật), không phải thị trường mới. Chỉ cần đọc hiểu khi thấy trong JD.
 - **CCNA / kéo dây mạng** — không đam mê + phần việc thể chất không kham nổi. Quyết định sai từ đầu.
 - **All-in PLC/automation thuần** — lệch tạng phần mềm.
 - **All-in cloud/big data** — rộng, đông, không dùng moat.

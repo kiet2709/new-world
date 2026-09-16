@@ -1,16 +1,21 @@
 # new_world — Lộ trình Kỹ sư Bắc cầu IT↔OT + Edge AI
 
-Repo học tập và là **artifact cuối cùng**: một hệ thống camera → Pi (AI) → Modbus/MQTT → ESP32 → thiết bị.
+Repo học tập và là **artifact cuối cùng**: camera → Pi (OpenCV/AI) → Modbus/MQTT/OPC UA → ESP32 → thiết bị, cộng HMI web và app desktop dùng chung một core library.
 
-## Ba tài liệu, ba vai trò
+## Bốn tài liệu, bốn vai trò
 
 | File | Vai trò | Khi nào đọc |
 |---|---|---|
 | [lo-trinh-hoc-nhung-edge-ai.md](lo-trinh-hoc-nhung-edge-ai.md) | **La bàn** — tại sao đi hướng này, nguyên tắc tự quyết | Khi phân vân ngã rẽ, khi mất động lực |
-| [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) | **Bản đồ** — 38 bài, làm gì, xong khi nào | Mỗi lần bắt đầu một bài |
-| `lessons/NN-*/NHAT-KY.md` | **Nhật trình** — bạn viết, không ai viết hộ | Mỗi lần kết thúc một bài |
+| [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) | **Bản đồ Chặng 1** — 56 bài, làm gì, xong khi nào | Mỗi lần bắt đầu một bài |
+| [docs/cach-hoc.md](docs/cach-hoc.md) | **Giao thức học** — vòng lặp một buổi, cách dùng AI | Trước bài đầu tiên, đọc lại mỗi khi thấy trôi |
+| [CHANG-2-BAN-DO.md](CHANG-2-BAN-DO.md) | **Bản đồ Chặng 2** — định hướng sau khi xong Chặng 1 | **Khi sắp xong Chặng 1, không phải trước đó** |
 
 Khi la bàn và bản đồ mâu thuẫn: **la bàn thắng**.
+
+## Cách gọi tên
+
+**CHẶNG** = giai đoạn lớn của sự nghiệp · **KHỐI** = nhóm bài trong một chặng · **BÀI** = đơn vị nhỏ nhất, 4–6 giờ, kết thúc bằng một commit.
 
 ## Bắt đầu
 
@@ -35,21 +40,23 @@ Yêu cầu duy nhất trên máy Windows: **Docker Desktop + Git**. Không cài 
 | `db` | Postgres 16 (cổng 5432) | `ot` |
 | `grafana` | Dashboard (cổng 3000, admin/admin) | `ot` |
 
-Từ Chặng 2 trở đi: `.\dev.ps1 up ot`.
+Từ Khối 2 trở đi: `.\dev.ps1 up ot`.
 
-## Tiến độ
+## Tiến độ Chặng 1 — 56 bài, ~5 tháng
 
-Đánh dấu khi xong một bài. Xong = đạt tiêu chí "Xong khi" **và** đã commit.
+Đánh dấu khi xong một khối. Xong = đạt tiêu chí "Xong khi" **và** đã commit.
 
-- [ ] **Chặng 0** — Bệ phóng công cụ (01–04)
-- [ ] **Chặng 1** — Embedded Linux trên Pi (05–12)
-- [ ] **Chặng 2** — ESP32-S3 và cây cầu OT (13–22)
-- [ ] **Chặng 3** — AI lên edge (23–30)
-- [ ] **Chặng 4** — C++ dẫn, hardening, giao hàng (31–38)
+- [ ] **Khối 0** — Nền tảng công cụ: Docker, Git, hai ngôn ngữ (00–09)
+- [ ] **Khối 1** — Embedded Linux trên Pi (10–18)
+- [ ] **Khối 2** — ESP32-S3 và cây cầu OT (19–29)
+- [ ] **Khối 3** — Thị giác máy và AI trên edge (30–41)
+- [ ] **Khối 4** — C++ vào cuộc (42–45)
+- [ ] **Khối 5** — Viết ứng dụng thật: C# (46–50)
+- [ ] **Khối 6** — Chịu lỗi, CI, giao hàng (51–55)
 
 ## Tiện ích
 
 ```bash
-bash scripts/scaffold-lessons.sh   # sinh lại thư mục bài từ bảng trong LO-TRINH-TUNG-BAI.md
+bash scripts/scaffold-lessons.sh   # sinh lại thư mục bài từ bảng tra trong LO-TRINH-TUNG-BAI.md
                                    # (chạy lại được, không ghi đè file đã có)
 ```
