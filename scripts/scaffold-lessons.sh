@@ -26,6 +26,17 @@ while IFS='|' read -r _ c_num c_name c_path c_label _; do
   mkdir -p "$path"
   readme="$path/README.md"
   diary="$path/NHAT-KY.md"
+  theory="$path/LY-THUYET.md"
+
+  if [[ ! -f "$theory" ]]; then
+    {
+      printf '# Lý thuyết — Bài %s: %s\n\n' "$num" "$name"
+      printf '> **Chưa viết.** Tôi viết file này trước khi bạn tới bài đó.\n'
+      printf '> Nếu bạn đang đọc dòng này mà sắp làm bài %s, nhắn tôi: "viết lý thuyết bài %s".\n\n' "$num" "$num"
+      printf -- '---\n\nPhần này chứa **nền lý thuyết tối thiểu** để bạn bắt đầu bài — không phải\n'
+      printf 'giáo trình đầy đủ. Khái niệm nền thì tôi đưa; cách áp dụng và gỡ lỗi thì bạn tự vật lộn.\n'
+    } >"$theory"
+  fi
 
   if [[ -f "$readme" ]]; then
     skipped=$((skipped + 1))
