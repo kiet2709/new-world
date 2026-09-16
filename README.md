@@ -2,14 +2,15 @@
 
 Repo học tập và là **artifact cuối cùng**: camera → Pi (OpenCV/AI) → Modbus/MQTT/OPC UA → ESP32 → thiết bị, cộng HMI web và app desktop dùng chung một core library.
 
-## Bốn tài liệu, bốn vai trò
+## Năm tài liệu, năm vai trò
 
 | File | Vai trò | Khi nào đọc |
 |---|---|---|
 | [lo-trinh-hoc-nhung-edge-ai.md](lo-trinh-hoc-nhung-edge-ai.md) | **La bàn** — tại sao đi hướng này, nguyên tắc tự quyết | Khi phân vân ngã rẽ, khi mất động lực |
 | [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) | **Bản đồ Chặng 1** — 56 bài, làm gì, xong khi nào | Mỗi lần bắt đầu một bài |
 | [docs/cach-hoc.md](docs/cach-hoc.md) | **Giao thức học** — vòng lặp một buổi, cách dùng AI | Trước bài đầu tiên, đọc lại mỗi khi thấy trôi |
-| [CHANG-2-BAN-DO.md](CHANG-2-BAN-DO.md) | **Bản đồ Chặng 2** — định hướng sau khi xong Chặng 1 | **Khi sắp xong Chặng 1, không phải trước đó** |
+| [CHANG-2-BAN-DO.md](CHANG-2-BAN-DO.md) | **Bản đồ Chặng 2** — khối A–G, lấp lỗ hổng còn lại | **Khi sắp xong Chặng 1, không phải trước đó** |
+| [CHANG-3-BAN-DO.md](CHANG-3-BAN-DO.md) | **Bản đồ Chặng 3** — chuyên gia và đường nghiên cứu: TinyML, 3D vision, PLC/HMI | **Khi sắp xong Chặng 2** |
 
 Khi la bàn và bản đồ mâu thuẫn: **la bàn thắng**.
 
