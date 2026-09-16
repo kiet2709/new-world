@@ -74,7 +74,7 @@ Mục tiêu: tự dựng môi trường, nạp code qua CLI/VS Code, tránh IDE 
 
 ## 5. CHẶNG 1 — Xây combo lõi (thiết bị hiện có: ESP32-S3 + Pi)
 
-> **Bản chi tiết: [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) — 7 khối, 56 bài, ~5 tháng.** Phần dưới đây chỉ là phác thảo gốc, giữ lại để nhớ ý định ban đầu.
+> **Bản chi tiết: [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) — 7 khối, 64 bài, ~5.5–6 tháng.** Phần dưới đây chỉ là phác thảo gốc, giữ lại để nhớ ý định ban đầu.
 >
 > *Cách gọi tên: **CHẶNG** = giai đoạn lớn của sự nghiệp · **KHỐI** = nhóm bài trong một chặng · **BÀI** = đơn vị nhỏ nhất.*
 
