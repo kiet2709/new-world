@@ -4,7 +4,32 @@
 >
 > Bản sâu (giải tích mạch, miền tần số, Laplace) nằm ở [CHANG-4-BAN-DO.md](../CHANG-4-BAN-DO.md).
 >
-> **Dùng ở:** bài 17 (GPIO) · bài 18 (I2C/SPI) · bài 20 (ADC trên ESP32) · bài 25 (RS485) · khối C của Chặng 2.
+---
+
+## Đọc phần nào, khi nào — đừng đọc hết ngay
+
+Phần lớn file này **không cần cho Chặng 1**. Đọc hết bây giờ là lãng phí.
+
+| Lúc nào | Đọc gì | Thời gian |
+|---|---|---|
+| **Trước bài 17** | **Chỉ mục 10 — Bảy quy tắc sống còn.** Đó là phần chặn bạn đốt board | ~5 phút |
+| Khi bài nào cần | Tra đúng mục đó: bài 17 → mục 3 · bài 18 → mục 4 · bài 20 → mục 2 · bài 25 → mục 7 · bài 41 → mục 9 | vài phút |
+| **Khối C của Chặng 2** | Đọc trọn vẹn, cùng lúc cầm logic analyzer và đồng hồ | ~1 tuần |
+
+### Và một quyết định mua sắm cắt được gần hết phần này
+
+**Ở Chặng 1, mua module chứ đừng mua linh kiện rời.**
+
+| Module | Đã lo sẵn cho bạn |
+|---|---|
+| Breakout cảm biến I2C | Điện trở kéo lên |
+| Module relay | Opto-isolator + diode dập + transistor kích |
+| Module MAX485 | Mạch thu phát RS485, đôi khi cả điện trở đầu cuối |
+| Module LED | Điện trở hạn dòng |
+
+Với module, thứ bạn thật sự phải nhớ ở Chặng 1 rút gọn còn **ba điều**: nối GND chung · không đưa 5V vào chân 3.3V · không kéo tải công suất thẳng từ GPIO.
+
+Phần còn lại của file này — Ohm, phân áp, RC, trở kháng — trả lãi ở **khối C của Chặng 2**, khi bạn bắt đầu *nhìn* tín hiệu bằng logic analyzer thay vì chỉ *dùng* nó.
 
 ---
 

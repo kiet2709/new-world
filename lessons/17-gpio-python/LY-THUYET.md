@@ -1,6 +1,6 @@
 # Lý thuyết — Bài 17: GPIO bằng Python
 
-> **Nền điện tử:** bài này giả định bạn biết điện trở kéo, mức logic, và định luật Ohm. Chưa chắc thì đọc [docs/dien-tu-toi-thieu.md](../../docs/dien-tu-toi-thieu.md) trước — khoảng 30 phút, dùng lại cho bài 18, 20, 25 và khối C của Chặng 2.
+> **Nền điện tử:** cần đúng ba điều — nối GND chung · không đưa 5V vào chân 3.3V · không kéo tải công suất thẳng từ GPIO. Chi tiết và phần còn lại tra ở [docs/dien-tu-toi-thieu.md](../../docs/dien-tu-toi-thieu.md) khi cần; đọc trọn vẹn thì để tới khối C của Chặng 2.
 
 ## 1. GPIO là gì
 

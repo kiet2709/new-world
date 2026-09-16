@@ -12,7 +12,7 @@ Repo học tập và là **artifact cuối cùng**: camera → Pi (OpenCV/AI) �
 | [CHANG-2-BAN-DO.md](CHANG-2-BAN-DO.md) | **Bản đồ Chặng 2** — khối A–G, lấp lỗ hổng còn lại | **Khi sắp xong Chặng 1, không phải trước đó** |
 | [CHANG-3-BAN-DO.md](CHANG-3-BAN-DO.md) | **Bản đồ Chặng 3** — chuyên gia và đường nghiên cứu: TinyML, 3D vision, PLC/HMI | **Khi sắp xong Chặng 2** |
 | [CHANG-4-BAN-DO.md](CHANG-4-BAN-DO.md) | **Bản đồ Chặng 4** — FPGA và nền tảng sâu; có phần **chuyển sớm** về Chặng 2–3 | Đọc mục 0 **ngay bây giờ** — nó đổi vị trí vài thứ |
-| [docs/dien-tu-toi-thieu.md](docs/dien-tu-toi-thieu.md) | **Điện tử tối thiểu** — Ohm, điện trở kéo, mức logic, nối đất | Trước bài 17 |
+| [docs/dien-tu-toi-thieu.md](docs/dien-tu-toi-thieu.md) | **Điện tử tối thiểu** — tra khi cần | **Chỉ mục "7 quy tắc" trước bài 17**; đọc trọn ở khối C của Chặng 2 |
 | [docs/tu-vung.md](docs/tu-vung.md) | **Từ vựng Việt · English · 日本語** — kỷ luật xuyên suốt, ~10 phút mỗi bài | Mỗi bài |
 
 Khi la bàn và bản đồ mâu thuẫn: **la bàn thắng**.
