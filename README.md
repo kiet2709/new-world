@@ -2,15 +2,17 @@
 
 Repo học tập và là **artifact cuối cùng**: camera → Pi (OpenCV/AI) → Modbus/MQTT/OPC UA → ESP32 → thiết bị, cộng HMI web và app desktop dùng chung một core library.
 
-## Năm tài liệu, năm vai trò
+## Tài liệu trong repo
 
 | File | Vai trò | Khi nào đọc |
 |---|---|---|
 | [lo-trinh-hoc-nhung-edge-ai.md](lo-trinh-hoc-nhung-edge-ai.md) | **La bàn** — tại sao đi hướng này, nguyên tắc tự quyết | Khi phân vân ngã rẽ, khi mất động lực |
-| [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) | **Bản đồ Chặng 1** — 56 bài, làm gì, xong khi nào | Mỗi lần bắt đầu một bài |
+| [LO-TRINH-TUNG-BAI.md](LO-TRINH-TUNG-BAI.md) | **Bản đồ Chặng 1** — 64 bài, làm gì, xong khi nào | Mỗi lần bắt đầu một bài |
 | [docs/cach-hoc.md](docs/cach-hoc.md) | **Giao thức học** — vòng lặp một buổi, cách dùng AI | Trước bài đầu tiên, đọc lại mỗi khi thấy trôi |
 | [CHANG-2-BAN-DO.md](CHANG-2-BAN-DO.md) | **Bản đồ Chặng 2** — khối A–G, lấp lỗ hổng còn lại | **Khi sắp xong Chặng 1, không phải trước đó** |
 | [CHANG-3-BAN-DO.md](CHANG-3-BAN-DO.md) | **Bản đồ Chặng 3** — chuyên gia và đường nghiên cứu: TinyML, 3D vision, PLC/HMI | **Khi sắp xong Chặng 2** |
+| [CHANG-4-BAN-DO.md](CHANG-4-BAN-DO.md) | **Bản đồ Chặng 4** — FPGA và nền tảng sâu; có phần **chuyển sớm** về Chặng 2–3 | Đọc mục 0 **ngay bây giờ** — nó đổi vị trí vài thứ |
+| [docs/tu-vung.md](docs/tu-vung.md) | **Từ vựng Việt · English · 日本語** — kỷ luật xuyên suốt, ~10 phút mỗi bài | Mỗi bài |
 
 Khi la bàn và bản đồ mâu thuẫn: **la bàn thắng**.
 

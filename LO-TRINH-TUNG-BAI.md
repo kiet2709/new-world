@@ -69,6 +69,8 @@ Quy tắc phân chia:
 
 **4. Mọi kết luận về hiệu năng phải có SỐ.** Không viết "C++ nhanh hơn". Viết "C++ 0.8ms/lần đọc vs Python 4.2ms, RAM 2MB vs 31MB, trên Pi 4, 10000 lần lặp".
 
+**5. Mỗi bài ghi thuật ngữ mới vào [docs/tu-vung.md](docs/tu-vung.md) — Việt · English · 日本語.** ~10 phút/bài. Học tên gọi *ngay lúc vừa hiểu khái niệm* rẻ hơn học ngôn ngữ tách rời rất nhiều. Tiếng Anh để đọc datasheet và paper; tiếng Nhật vì mảng **検査装置** đang được offshore từ Nhật về Việt Nam.
+
 ---
 
 ## Nhịp học và thời lượng
