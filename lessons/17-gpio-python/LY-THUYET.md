@@ -1,5 +1,7 @@
 # Lý thuyết — Bài 17: GPIO bằng Python
 
+> **Nền điện tử:** bài này giả định bạn biết điện trở kéo, mức logic, và định luật Ohm. Chưa chắc thì đọc [docs/dien-tu-toi-thieu.md](../../docs/dien-tu-toi-thieu.md) trước — khoảng 30 phút, dùng lại cho bài 18, 20, 25 và khối C của Chặng 2.
+
 ## 1. GPIO là gì
 
 **General Purpose Input/Output** — chân cắm mà phần mềm điều khiển được mức điện áp, hoặc đọc được mức điện áp bên ngoài.

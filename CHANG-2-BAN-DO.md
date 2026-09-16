@@ -23,13 +23,29 @@ Cả gói bảy khối ≈ **8–9 tháng**. Đó là con số thật, không ph
 
 | Khối | Nội dung | Bịt lỗ hổng nào | Thời lượng |
 |---|---|---|---|
-| **C** | **Gỡ lỗi phần cứng**: logic analyzer (~500k–1tr), oscilloscope cơ bản, đọc schematic | Uy tín phần cứng. **Rẻ nhất, hiệu quả/chi phí cao nhất** | ~2 tuần |
+| **C** | **Gỡ lỗi phần cứng**: logic analyzer (~500k–1tr), oscilloscope cơ bản, đọc schematic — **kèm mạch điện tối thiểu**, xem mục dưới | Uy tín phần cứng. **Rẻ nhất, hiệu quả/chi phí cao nhất** | ~2 + 1 tuần |
 | **F** | **Machine learning từ gốc** (chi tiết bên dưới) | "Chỉ biết dùng model có sẵn" | ~11 tuần |
-| **A** | **STM32 bare-metal**: thanh ghi, ngắt, DMA, timer, debug ST-Link, RTOS sâu | Lỗ **"nhúng thuần"** — hiện bạn trượt JD đòi bare-metal | ~6 tuần |
+| **A** | **STM32 bare-metal**: thanh ghi, ngắt, DMA, timer, debug ST-Link, RTOS sâu — **đi sau kiến trúc máy tính + hợp ngữ**, xem mục dưới | Lỗ **"nhúng thuần"** — hiện bạn trượt JD đòi bare-metal | ~2 + 6 tuần |
 | **B** | **Embedded Linux thật**: Yocto/Buildroot, device tree, u-boot, tự dựng image | Lỗ **"Embedded Linux Engineer"** — ranh giới giữa "biết dùng Pi" và "kỹ sư Linux nhúng" | ~5 tuần |
 | **E** | **E0 Cloud nền tảng** → **E1 AWS IoT Core** | Xuất hiện dày trong JD IoT | ~2 + 3 tuần |
 | **D** | **Phía OT thật**: PLC đọc hiểu (ladder cơ bản), một sản phẩm SCADA — **Ignition** (bản dùng thử đầy đủ chức năng, không tốn license như WinCC) | Uy tín với dân tự động hoá | ~4 tuần |
 | **G** | **Ba nhánh rẽ theo ngành** (chi tiết bên dưới) | Tuỳ ngành | tuỳ |
+
+## Nền tảng chuyển sớm từ Chặng 4 xuống — đọc trước khi lên lịch
+
+Bản phác ban đầu để toán, kiến trúc máy tính, hợp ngữ, mạch điện ở **Chặng 4**. Sai vị trí: chúng không phải phần thưởng sau, mà là **điều kiện để làm tốt chính Chặng 2 này**. Lý do đầy đủ ở [CHANG-4-BAN-DO.md](CHANG-4-BAN-DO.md) mục 0.
+
+Ba mảnh phải chèn vào Chặng 2:
+
+| Chèn vào đâu | Nội dung (bản **vừa đủ**, không phải bản sâu) | Thời lượng |
+|---|---|---|
+| **Đầu khối C** | Định luật Ohm · phân áp · RC · trở kháng · mức logic và ngưỡng · nhiễu và nối đất · vì sao 3.3V và 5V không nối thẳng được | ~1 tuần |
+| **Trước khối A** | Mô hình von Neumann · thanh ghi · phân cấp bộ nhớ và cache · **đọc hiểu ARM assembly do compiler sinh ra** (`-S`, `objdump`) | ~2 tuần |
+| **Đầu khối F** | F1 đã có bản tối thiểu (vector/ma trận, đạo hàm, quy tắc chuỗi). **Đủ cho F, chưa đủ cho khối V ở Chặng 3** | trong F1 |
+
+> **Hợp ngữ trước khối A làm khối A nhanh hơn, không chậm đi.** Bare-metal là viết vào thanh ghi; nếu chưa từng thấy CPU thật sự thực hiện lệnh thế nào thì thanh ghi vẫn là con số ma thuật. Đọc được assembly compiler sinh ra là lúc nó hết ma thuật.
+
+Chặng 2 vì vậy dài thêm khoảng **3 tuần** so với ước lượng ban đầu.
 
 ## Thứ tự đề xuất: `C → F → A → B → E → D`
 

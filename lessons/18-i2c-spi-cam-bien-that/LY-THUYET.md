@@ -1,5 +1,7 @@
 # Lý thuyết — Bài 18: I2C/SPI và đọc datasheet
 
+> **Nền điện tử:** bài này giả định bạn biết điện trở kéo, mức logic, và định luật Ohm. Chưa chắc thì đọc [docs/dien-tu-toi-thieu.md](../../docs/dien-tu-toi-thieu.md) trước — khoảng 30 phút, dùng lại cho bài 18, 20, 25 và khối C của Chặng 2.
+
 ## 1. Vì sao cần giao thức, không chỉ GPIO
 
 Một cảm biến nhiệt độ cần trả về số 25.4. Qua GPIO trần thì phải mã hoá bằng tay từng bit, và cần rất nhiều chân. Giao thức nối tiếp giải quyết chuyện đó: **vài sợi dây, nhiều thiết bị, dữ liệu có cấu trúc.**

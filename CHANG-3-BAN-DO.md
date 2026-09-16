@@ -148,6 +148,25 @@ Khoá 6.5940 **có phần hiệu quả cho LLM** (quantization, serving, tối �
 
 *Mảng nặng nhất, học thuật nhất, và là chỗ đường PhD rõ nhất.*
 
+## Điều kiện tiên quyết — đừng vào khối này thiếu nó
+
+Multi-view geometry **không phải** một mảng thị giác máy có thêm toán. Nó **chính là toán**: hình học xạ ảnh và bình phương tối thiểu, mặc áo thị giác.
+
+Phải có trước khi vào:
+
+| Cần | Dùng vào đâu trong khối V |
+|---|---|
+| **SVD** | Giải hệ thuần nhất: ma trận cơ bản, ma trận thiết yếu, DLT cho homography |
+| **Bình phương tối thiểu** (tuyến tính và phi tuyến) | Bundle adjustment — trái tim của SfM |
+| **Phân rã trị riêng** | PCA trên point cloud, phân tích tư thế |
+| **Hình học xạ ảnh** | Toạ độ thuần nhất, điểm ở vô cực, vì sao camera là phép chiếu xạ ảnh |
+| **Nhóm Lie SO(3)/SE(3)** | Biểu diễn phép quay **đúng cách** — vì sao không tối ưu trực tiếp trên góc Euler |
+| **RANSAC** hiểu tận gốc | Mọi thứ trong khối này đều có ngoại lai |
+
+Bản tối thiểu ở F1 của Chặng 2 (vector, ma trận, đạo hàm) **không đủ cho khối này**. Dành khoảng **3–4 tuần toán** ngay trước khối V. Chi tiết ở [CHANG-4-BAN-DO.md](CHANG-4-BAN-DO.md) mục 0.
+
+> **Bỏ qua phần này thì hậu quả cụ thể:** bạn gọi `cv2.findEssentialMat()`, nó chạy, ra kết quả trông hợp lý — và bạn không giải thích nổi nó làm gì, không biết khi nào nó sai, không debug được khi nó sai. **Đó là vibe code ở tầng cao hơn**, khó phát hiện hơn vì bạn tưởng mình đã qua giai đoạn đó rồi.
+
 ## Bản đồ đã đổi — SuperPoint/SuperGlue không còn đầu bảng
 
 | Thế hệ | Phương pháp | Ghi chú |
